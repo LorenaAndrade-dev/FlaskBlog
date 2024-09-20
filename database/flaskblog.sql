@@ -82,22 +82,65 @@ CREATE TABLE comment(
 -- --------------- ----
 
 -- Inserindo dados na tabela 'staff'
-INSERT INTO staff(
-	emp_name, emp_email, emp_password, 
-    emp_image, emp_birth,emp_type,
+	INSERT INTO staff (
+    emp_name,
+    emp_email,
+    emp_password,
+    emp_image,
+    emp_birth,
     emp_description
-) VALUES (
-	'Joca da Silva',
-    'joca@silva.com',
-    -- SENHA INSERIDA SERÁ CRIPTOGRAFADA
-    SHA1('senha123'),
-    'https://randomuser.me/api/portraits/lego/8.jpg',
-    '2000-03-27',
-    'author',
-    ' Programador, esenvolvedor, enrolador e devedor'
-);
+    ) VALUES(
+		'Joca da Silva',
+        'jocasilva@email.com',
+        SHA1('Senha123'),
+        'https://randomuser.me/api/portraits/lego/5.jpg',
+        '2000-06-27',
+        'Programador, escultor, pescador e enrolador.'
+    ), (
+		'Marineusa Castro',
+        'marineusacastro@email.com',
+        SHA1('Senha123'),
+        'https://randomuser.me/api/portraits/women/53.jpg',
+        '1997-08-22',
+        'Programadora, psicultora, distribuidora e controladora.'
+    ),(
+		'Jucleide Sousa',
+        'jusousa@email.com',
+        SHA1('Senha123'),
+        'https://randomuser.me/api/portraits/women/25.jpg',
+        '1985-07-16',
+        'Programadora, escritora, cartunista e boleira.'
+    ),(
+		'Irineu Folha',
+        'irineufolha@email.com',
+        SHA1('Senha123'),
+        'https://randomuser.me/api/portraits/men/53.jpg',
+        '1990-09-05',
+        'Programador, filosofo, organizador e festeiro.'
+	),(
+    'Ana Beatriz',
+    'anabeatriz@email.com',
+    SHA1('Senha789'),
+    'https://randomuser.me/api/portraits/women/55.jpg',
+    '1990-11-15',
+    'Designer gráfica, apaixonada por arte digital.'
+    ),(
+    'Carlos Silva',
+    'carlossilva@email.com',
+    SHA1('Senha101'),
+    'https://randomuser.me/api/portraits/men/56.jpg',
+    '1988-07-30',
+    'Engenheiro de software e amante de viagens.'
+    );
+    -- Atualiza type do staff --
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'admin' WHERE (`emp_id` = '1');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '3');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '4');
+UPDATE `flaskblogdb`.`staff` SET `emp_type` = 'author' WHERE (`emp_id` = '5');
 
--- Lista do usuario cadastrado
-SELECT* FROM staff;
+-- Mostra registros da tabela 'Staff' --
+SELECT * FROM staff;
+
+
 
 
