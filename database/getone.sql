@@ -1,9 +1,11 @@
+-- Obtém 1 artigo pelo id com os dados do autor
+
 SELECT
 	-- Campos do artigo
 	art_id, art_title, art_content,
     -- Campos do author
     sta_id, sta_name, sta_image, sta_description, sta_type,
-    -- Campos especiais
+    -- Campos expeciais
     -- Converter a data do artigo para PT-BR
     DATE_FORMAT(art_date, '%d/%m/%Y às %H:%i') AS art_datebr,
     -- Obtém a idade do autor
