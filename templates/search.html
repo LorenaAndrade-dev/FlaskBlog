@@ -1,14 +1,26 @@
-{# Insere (herda) o template `layout.html` nesta página #}
 {% extends "layout.html" %}
 
-{# Peenche o bloco dentro de <article></article> de `layout.html` #}
 {% block article %}
 
-<h2>Artigos Recentes</h2>
+{% if page.total == 0 %}
+
+<h2>Procurando por "{{ page.query }}"</h2>
+<p class="center">Não encontrei nada com "{{ page.query }}"!</p>
+
+{% else %}
+
+{% if page.total > 1 %}
+
+<h2>{{ page.total }} Resultados</h2>
+
+{% else %}
+
+<h2>{{ page.total }} Resultado</h2>
+
+{% endif %}
 
 <div class="article-grid">
 
-    {# Lista os artigos mais recentes à partir do dict `page.articles` #}
     {% for article in page.articles %}
 
     <div class="article-box" onclick="location.href = '/view/{{ article.art_id }}'">
@@ -23,10 +35,19 @@
 
 </div>
 
+{% endif %}
+
 {% endblock%}
 
-{# Peenche o bloco dentro de <aside></aside> de `layout.html` #}
 {% block aside %}
+
+<h3>Links rápidos</h3>
+<ul class="aside">
+    <li><a href="/about">Sobre</a></li>
+    <li><a href="/contacts">Faça contato</a></li>
+    <li><a href="/policies">Sua privacidade</a></li>
+</ul>
+&nbsp;
 
 <h3><i class="fa-solid fa-plus fa-fw"></i> Visitados</h3>
 
@@ -43,21 +64,4 @@
 
 </div>
 
-&nbsp;
-
-<h3><i class="fa-solid fa-plus fa-fw"></i> Comentados</h3>
-
-<div class="aside-grid">
-
-    {% for article in page.articles_commented %}
-
-    <div class="aside-article" onclick="location.href = '/view/{{ article.art_id }}'">
-        <img src="{{ article.art_thumbnail }}" alt="{{ article.art_title }}">
-        <div>{{ article.art_title }} <sup>{{ article.total_comments }}</sup></div>
-    </div>
-
-    {% endfor %}
-
-</div>
-
-{%endblock %}
+{% endblock %}

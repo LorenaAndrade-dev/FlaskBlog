@@ -299,6 +299,7 @@ button {
 }
 
 /* Lista de artigos na barra complementar */
+
 .aside-grid {
     display: grid;
     gap: 1rem;
@@ -310,6 +311,7 @@ button {
     align-items: center;
     cursor: pointer;
     font-size: 90%;
+    margin-bottom: .5rem;
 }
 
 .aside-article img {
