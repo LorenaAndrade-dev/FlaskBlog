@@ -80,7 +80,7 @@ button {
 /*************/
 
 #wrap>header {
-    background-color: orange;
+    background-color: rgb(129, 6, 167);
     display: flex;
     flex-direction: column;
 }
@@ -103,7 +103,7 @@ button {
 
 /* Caixa de busca */
 #wrap>header form {
-    background-color: black;
+    background-color: rgb(106, 13, 129);
     display: flex;
     padding: 1rem;
 }
@@ -129,7 +129,7 @@ button {
 /******************/
 
 #wrap>nav {
-    background-color: orangered;
+    background-color: rgb(184, 4, 201);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -152,7 +152,7 @@ button {
 }
 
 #wrap>nav a:hover {
-    background-color: black;
+    background-color: rgb(24, 23, 23);
 }
 
 /**********************/
@@ -185,7 +185,7 @@ button {
 /**********/
 
 #wrap>footer {
-    background-color: black;
+    background-color: rgb(140, 15, 223);
     display: flex;
     align-items: center;
     justify-content: space-between;
